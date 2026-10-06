@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UAE Financial Rules & Regulations – CISI MCQ Practice</title>
+<style>
+:root{--bg:#f6f7fb;--c:#fff;--t:#14213d;--m:#5b6478;--p:#0b3d91;--ok:#1b7f4b;--okb:#e6f5ec;--no:#b3261e;--nob:#fdecea;--bd:#dfe3ee}
+@media(prefers-color-scheme:dark){:root{--bg:#10141f;--c:#181e2d;--t:#eef1f8;--m:#9aa4bb;--p:#7fa6ff;--ok:#5fd394;--okb:#12301f;--no:#ff8a80;--nob:#3a1816;--bd:#2a3350}}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--t)}
+.w{max-width:820px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:4px 0}.sub{color:var(--m);font-size:13px;margin-bottom:12px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+select,button{font:inherit;padding:8px 12px;border-radius:8px;border:1px solid var(--bd);background:var(--c);color:var(--t)}
+button{cursor:pointer}button.p{background:var(--p);color:#fff;border-color:var(--p)}button:disabled{opacity:.4;cursor:default}
+.card{background:var(--c);border:1px solid var(--bd);border-radius:12px;padding:18px}
+.meta{display:flex;justify-content:space-between;color:var(--m);font-size:13px;margin-bottom:8px}
+.prog{height:6px;background:var(--bd);border-radius:3px;margin-bottom:14px;overflow:hidden}.prog i{display:block;height:100%;background:var(--p);width:0}
+.q{font-weight:600;margin-bottom:12px}
+.o{display:flex;gap:10px;width:100%;text-align:left;margin:8px 0;padding:11px 12px}
+.o b{min-width:22px}.o.ok{background:var(--okb);border-color:var(--ok)}.o.no{background:var(--nob);border-color:var(--no)}
+.ex{margin-top:14px;padding:12px;border-left:4px solid var(--p);background:var(--bg);border-radius:6px;font-size:15px}
+.ex .r{color:var(--m);font-size:13px;margin-top:6px}.v{font-weight:700}
+.nav{display:flex;justify-content:space-between;margin-top:14px}
+.res{text-align:center}.res .s{font-size:44px;font-weight:700;color:var(--p)}
+.ft{color:var(--m);font-size:12px;margin-top:14px}
+</style></head><body><div class="w">
+<h1>UAE Financial Rules & Regulations – MCQ Practice</h1>
+<div class="sub">CISI/SCA workbook, Edition 4 (syllabus 4.0). Single-best-answer format, instant feedback with explanation and reference.</div>
+<div class="bar">
+<select id="ch"></select>
+<label style="display:flex;align-items:center;gap:6px;font-size:14px"><input type="checkbox" id="sh" checked> Shuffle</label>
+<button class="p" id="go">Start</button>
+</div>
+<div id="app"></div>
+<div class="ft">Questions are original practice items written from the workbook text; always confirm against the current SCA rules and the latest CISI workbook version. Add more items to the <code>Q</code> array in this file's script.</div>
+</div>
+<script>
+const CH={1:"The Regulatory Infrastructure",2:"Licensed Bodies",3:"Investment Funds",4:"Markets",5:"Anti-Money Laundering and Combating the Financing of Terrorism",6:"Client Protection",7:"Trading",8:"Dubai Financial Market (DFM)"};
+// c=chapter, q=question, o=options (first is NOT necessarily correct; a=index of correct), e=explanation, r=reference
+const Q=[
+{c:1,q:"Under the market regulations, the market's board may set the interval between a trade and completion of settlement. What is the maximum?",o:["Same day (T+0)","One working day after the trade date","Two working days after the trade date","Five working days after the trade date"],a:2,e:"Clearing and settlement must be on a delivery-against-payment basis, and the interval may not exceed two working days after the trade date.",r:"Chapter 1, Section 3.1 – Regulations for Securities and Commodities Markets"},
+{c:1,q:"What is the minimum paid-up capital required for a second-category firm (dealing in investment)?",o:["AED 5 million","AED 30 million","AED 50 million","AED 100 million"],a:2,e:"Firms in the second category must have paid-up capital of not less than AED 50 million.",r:"Chapter 1, Section 6.2 – Category 2: Dealing in Investment"},
+{c:1,q:"What is the minimum paid-up capital for a fourth-category firm (credit rating agencies)?",o:["AED 1 million","AED 5 million","AED 10 million","AED 50 million"],a:1,e:"The paid-up capital requirement for the fourth category is not less than AED 5 million.",r:"Chapter 1, Section 6.4 – Category 4: Credit Rating Agencies"},
+{c:1,q:"Where a market breaches a financial requirement, which is the FIRST sanction in the SCA's ranked order?",o:["Penalty for delay of payment","Notice to rectify within 30 days","Warning","Suspension of trading"],a:2,e:"Sanctions rank: (1) warning, (2) notice to rectify within 30 days, (3) penalty. The warning states which requirement was violated.",r:"Chapter 1, Section 1.3 – sanctions on markets"},
+{c:2,q:"Which financial activity falls within the third licensing category (keeping, clearing and registration)?",o:["Trading and clearing broker","General clearing","Investment advice","Credit rating"],a:1,e:"The third category covers custody, clearing and recording, and includes general clearing.",r:"Chapter 2, Section 2.1 – Licensed Financial Activities and Categories"},
+{c:3,q:"By when must a fund manager submit final approval documents to the Authority after subscriptions close?",o:["Within 7 days","Within 15 days","Within 30 days","Within 90 days"],a:2,e:"Items must be submitted within no more than 30 days of closing subscriptions; otherwise establishment is deemed non-existent and subscribed amounts must be returned.",r:"Chapter 3, Section 1.2.3 – Final Approval"},
+{c:3,q:"What is the permitted length of a local fund's first financial year, measured from the licence date?",o:["Exactly 12 months","No less than 3 and no more than 12 months","No less than 6 and no more than 18 months","No more than 24 months"],a:2,e:"The first financial year must not exceed 18 months nor be shorter than 6 months from the date the fund was licensed.",r:"Chapter 3, Section 1.3 – Reporting Requirements"},
+{c:3,q:"A cash investment fund must invest at least what proportion of assets in highly liquid cash instruments, with a maximum weighted average maturity of what?",o:["80%; 90 days","90%; 120 days","75%; 180 days","95%; 60 days"],a:1,e:"The minimum is 90% in highly liquid cash instruments, and the weighted average investment maturity may not exceed 120 days.",r:"Chapter 3 – Cash investment funds"},
+{c:3,q:"A venture capital fund with managed assets valued below AED 180 million must, among other things:",o:["Appoint a custodian outside the UAE","Prepare a summary of the annual report in accordance with IFRS","Delist its units","Hold no more than 5% in any asset"],a:1,e:"Smaller venture capital funds (under AED 180m) must prepare a summary annual report under IFRS, among other requirements.",r:"Chapter 3, Section 2.2 – Venture Capital Funds"},
+{c:4,q:"A newly listing company must show sufficient working capital for what period?",o:["3 months","6 months","12 months","24 months"],a:2,e:"Listing requirements include sufficient working capital for 12 months, a prospectus, and a listing adviser for two years from listing.",r:"Chapter 4 – Listing requirements for companies"},
+{c:4,q:"Unless the Authority decides otherwise, what is the minimum aggregate value of debt securities to be listed?",o:["AED 1 million","AED 5 million","AED 10 million","AED 50 million"],a:2,e:"The aggregate value of all debt securities to be listed must be at least AED 10 million (or an acceptable foreign currency equivalent).",r:"Chapter 4 – Listing of debt securities"},
+{c:4,q:"After a delisting decision is issued, within what period will the Authority notify the company?",o:["5 days","15 days","30 days","90 days"],a:2,e:"The Authority notifies the company within 30 days of the decision, and the market announces it on its website.",r:"Chapter 4 – Delisting of shares"},
+{c:4,q:"In a crypto asset fundraising, what is the maximum a single client may invest (amendable by the Authority)?",o:["AED 35,000","AED 150,000","AED 350,000","AED 3,500,000"],a:2,e:"No client may invest more than AED 350,000 or the equivalent; the Authority may amend this amount.",r:"Chapter 4, Section 8.4 – Fundraising for Crypto Assets"},
+{c:5,q:"CDD is required for occasional wire transfers of what amount or more?",o:["AED 3,500","AED 35,000","AED 55,000","AED 100,000"],a:0,e:"CDD applies to occasional wire transfers equal to or exceeding AED 3,500. The AED 55,000 figure applies to other occasional transactions, including linked ones.",r:"Chapter 5, Section 2.2 – Customer Due Diligence (CDD)"},
+{c:5,q:"Which is the penalty range for the money laundering offence (before aggravating factors)?",o:["Up to 1 year and AED 10,000–50,000","Up to 3 years and AED 50,000–500,000","Up to 10 years and AED 100,000–5,000,000","Life imprisonment and unlimited fine"],a:2,e:"Imprisonment of up to ten years and a fine of AED 100,000–5,000,000, or either. Aggravated cases carry temporary imprisonment and AED 300,000–10,000,000.",r:"Chapter 5, Section 8.2 – Money Laundering"},
+{c:5,q:"What is the fine range for failure to report suspicions or gross negligence in implementing related procedures?",o:["AED 10,000–100,000","AED 100,000–1,000,000","AED 300,000–10,000,000","AED 1,000,000–5,000,000"],a:1,e:"Imprisonment and/or a fine of AED 100,000–1,000,000 may apply.",r:"Chapter 5, Section 8.5 – Failure to Report Suspicions"},
+{c:6,q:"For a client who has authorised their portfolio to be leveraged, how often must periodic statements be provided?",o:["Monthly","Three-monthly","Six-monthly","Every 12 months"],a:0,e:"Where leverage is authorised, statements must be monthly. Annual statements are only possible with deal-by-deal confirmations and exclusion of certain higher-risk investments.",r:"Chapter 6, Section 4.4 – Periodic Reporting"},
+{c:6,q:"What is the minimum single-investor subscription for a private offering promoted in the UAE for a fund incorporated in a free zone or financial free zone?",o:["AED 100,000","AED 500,000","AED 1 million","AED 5 million"],a:2,e:"Generally not less than AED 500,000; for funds incorporated in a free zone or financial free zone, not less than AED 1 million.",r:"Chapter 6, Section 5.1 – Promoter Obligations"},
+{c:6,q:"Most client protection rules do not apply when the client is:",o:["A retail client","An eligible counterparty","An individual investor","A charity"],a:1,e:"The majority of the client classification and protection rules do not apply to eligible counterparties.",r:"Chapter 6, Section 4 – Clear, Fair and Not Misleading"},
+{c:7,q:"Within how many days must the ADX decide on a complete application for remote access by a foreign brokerage company?",o:["5 days","15 days","30 days","60 days"],a:2,e:"ADX decides within 30 days of submission of the complete application; the applicant then registers approval with the Authority within five working days.",r:"Chapter 7, Section 1.2 – Remote Access by Foreign Brokerage Companies"},
+{c:7,q:"What are the deadlines for audited quarterly and annual reports after the end of the fiscal period?",o:["30 and 60 days","45 and 90 days","60 and 120 days","90 and 180 days"],a:1,e:"Audited quarterly reports within 45 days; audited annual financial statements within 90 days.",r:"Chapter 7, Section 2.1 – Reporting Requirements"},
+{c:7,q:"Which condition applies to an ADX big block deal?",o:["At least 1% of the issuer's capital","At least 10% of the issuer's capital","Up to ten persons on both sides","No Exchange approval needed"],a:0,e:"The deal must be at least 1% of issuer capital, approved by the Exchange, with one side a single person and the other up to ten persons (ADX may waive).",r:"Chapter 7, Section 2.4 – ADX Big Block Deals"},
+{c:7,q:"A foreign brokerage company wishing to trade on ADX remotely must also:",o:["Be a joint-stock company in the UAE","Contract with a clearing member of the Exchange","Hold no collateral","Obtain DFM approval"],a:1,e:"It must provide collateral and contract with an ADX clearing member to clear and settle its trades.",r:"Chapter 7, Section 1.2 – Remote Access by Foreign Brokerage Companies"},
+{c:8,q:"After becoming a public shareholding company, DFM's capital was AED 8 billion in 8 billion shares. What share of capital was offered in an IPO?",o:["5%","10%","20%","49%"],a:2,e:"20% of the capital was offered through an IPO after DFM launched as a public institution in March 2000 and was transformed.",r:"Chapter 8 – Introduction"},
+{c:8,q:"DFM operates according to which principles and is regulated by which body?",o:["Common law; DFSA","Shariah principles; SCA","Civil law; Central Bank","Shariah principles; ADGM FSRA"],a:1,e:"DFM operates according to Shariah principles and is regulated by the Securities and Commodities Authority.",r:"Chapter 8 – Introduction"},
+{c:8,q:"How do daily price limits apply to a share's very first trading session on DFM?",o:["Limits apply at ±5%","Limits apply at ±10%","Limits do not apply; the price floats until a transaction occurs","Trading is suspended"],a:2,e:"Price limits do not apply in the first session; the closing price becomes the benchmark for the next session's limits.",r:"Chapter 8, Section 4.1 – Rules of Securities Trading"},
+{c:8,q:"For a dual-listed foreign company, the DFM opening price on the first trading day is based on:",o:["The IPO price","The last closing price in the principal market","The average of the last 30 days","The nominal value"],a:1,e:"It is based on the last closing price of the security in its principal market.",r:"Chapter 8, Section 4.1 – Rules of Securities Trading"}
+];
+const $=id=>document.getElementById(id),L="ABCD";
+$("ch").innerHTML='<option value="0">All chapters ('+Q.length+')</option>'+Object.keys(CH).map(k=>`<option value="${k}">Ch ${k}: ${CH[k]} (${Q.filter(x=>x.c==k).length})</option>`).join("");
+let set=[],i=0,score=0,done=false;
+const shuf=a=>{for(let j=a.length-1;j>0;j--){const k=Math.random()*(j+1)|0;[a[j],a[k]]=[a[k],a[j]]}return a};
+$("go").onclick=()=>{const c=+$("ch").value;set=Q.filter(x=>!c||x.c==c).map(x=>{const idx=x.o.map((_,n)=>n);if($("sh").checked)shuf(idx);return{...x,o:idx.map(n=>x.o[n]),a:idx.indexOf(x.a)}});if($("sh").checked)shuf(set);i=0;score=0;show()};
+function show(){
+ if(i>=set.length){const p=Math.round(score/set.length*100);$("app").innerHTML=`<div class="card res"><div>Result</div><div class="s">${score}/${set.length} (${p}%)</div><p>${p>=70?"At or above the 70% CISI pass benchmark.":"Below the 70% CISI pass benchmark – revisit the references."}</p><button class="p" onclick="$('go').click()">Restart</button></div>`;return}
+ const x=set[i];done=false;
+ $("app").innerHTML=`<div class="card"><div class="meta"><span>Ch ${x.c}: ${CH[x.c]}</span><span>Q ${i+1}/${set.length} · Score ${score}</span></div><div class="prog"><i style="width:${i/set.length*100}%"></i></div><div class="q">${x.q}</div>${x.o.map((t,n)=>`<button class="o" data-n="${n}"><b>${L[n]}</b><span>${t}</span></button>`).join("")}<div id="fb"></div><div class="nav"><button id="pv" ${i?"":"disabled"}>Back</button><button class="p" id="nx" disabled>${i==set.length-1?"Finish":"Next"}</button></div></div>`;
+ document.querySelectorAll(".o").forEach(b=>b.onclick=()=>pick(+b.dataset.n));
+ $("nx").onclick=()=>{i++;show()};$("pv").onclick=()=>{i--;show()};
+}
+function pick(n){if(done)return;done=true;const x=set[i],ok=n==x.a;if(ok)score++;
+ document.querySelectorAll(".o").forEach((b,k)=>{b.disabled=true;if(k==x.a)b.classList.add("ok");else if(k==n)b.classList.add("no")});
+ $("fb").innerHTML=`<div class="ex"><div class="v" style="color:var(--${ok?"ok":"no"})">${ok?"Correct":"Incorrect – the answer is "+L[x.a]}</div>${x.e}<div class="r">Reference: ${x.r}</div></div>`;$("nx").disabled=false}
+</script></body></html>
